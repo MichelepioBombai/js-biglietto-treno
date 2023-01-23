@@ -1,5 +1,3 @@
-// Va applicato uno sconto del 40 % per gli over 65.
-// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 
 
@@ -19,13 +17,32 @@ const ticketPrice = (journey * 0.21);
 
 // Va applicato uno sconto del 20 % per i minorenni.
 
+const discountA = ((ticketPrice * 20) / 100) 
+const discountB = ((ticketPrice * 40) / 100)
+
 if(age < 18){
-    const discount = (ticketPrice / 100) 
-
-
+    const discountA = ((ticketPrice * 20) / 100 ) 
+    const ticketA = `Il tuo biglietto costerà ${discountA}€`;
+    document.getElementById( 'ticketA' ).innerHTML = ticketA;
+    // console.log(discountA);
+    
 }
 
-console.log(discount);
+// Va applicato uno sconto del 40 % per gli over 65.
+else if(age > 65){
+    const discountB = ((ticketPrice * 40) / 100)
+    const ticketB = `Il tuo biglietto costerà ${discountB}€`;
+    document.getElementById('ticketB').innerHTML = ticketB;
+  
+}
+else{
+    const ticketPrice = (journey * 0.21);
+    const ticketC = `Il tuo biglietto costerà ${ticketPrice}€`;
+    document.getElementById('ticketC').innerHTML = ticketC;
+}
+
+
+// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 
 
@@ -33,8 +50,3 @@ console.log(discount);
 
 
 
-
-
-
-// let myRandomNumber = Math.floor(Math.random() * 100) +1;
-// console.log(myRandomNumber);
