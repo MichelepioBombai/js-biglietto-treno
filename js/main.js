@@ -22,7 +22,7 @@ const discountB = ((ticketPrice * 40) / 100)
 
 if(age < 18){
     const discountA = ((ticketPrice * 20) / 100 ) 
-    const ticketA = `Il tuo biglietto costerà ${discountA}€`;
+    const ticketA = `Il tuo biglietto costerà ${ticketPrice - discountA}€`;
     document.getElementById( 'ticketA' ).innerHTML = ticketA;
     // console.log(discountA);
     
@@ -31,7 +31,7 @@ if(age < 18){
 // Va applicato uno sconto del 40 % per gli over 65.
 else if(age > 65){
     const discountB = ((ticketPrice * 40) / 100)
-    const ticketB = `Il tuo biglietto costerà ${discountB}€`;
+    const ticketB = `Il tuo biglietto costerà ${ticketPrice - discountB}€`;
     document.getElementById('ticketB').innerHTML = ticketB;
   
 }
